@@ -31,5 +31,22 @@
         }
       }
     }
+    .content-body {
+      display: flex;
+      flex-direction: row;
+      margin-top: 20px;
+      .content-left {
+        flex: 1;
+      }
+      .content-items {
+        flex: 3;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        @media (max-width: 1400px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
   }
 }
