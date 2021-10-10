@@ -1,0 +1,26 @@
+.searchbar-container {
+  background: #EEEEEE;
+  border-radius: 100px;
+  padding: 0 27px 0 27px;
+  width: 70%;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  svg {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .searchbar-input {
+    width: 95%;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    height: 48px;
+  }
+}

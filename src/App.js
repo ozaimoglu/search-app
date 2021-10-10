@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header"
+import './App.scss';
+import logo from "./assets/hepsiburada-logo.png"
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header logo={logo} />
+        <div className="content-container">
+            <div className="content-header-row">
+                <div className="content-header-title">
+                    <h1>TİTLE</h1>
+                    <h2>Aranan Kelime: <span>ihopne 11</span></h2>
+                </div>
+                <div className="content-header-order">ORDER</div>
+            </div>
+        </div>
     </div>
   );
 }

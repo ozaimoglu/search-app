@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+  .content-container {
+    padding: 17px 80px 17px 80px;
+    .content-header-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .content-header-title {
+        h1 {
+          text-align: left;
+          margin: 0;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 28px;
+          line-height: 100%;
+          color: #484848;
+        }
+        h2 {
+          margin: 0;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 100%;
+          display: flex;
+          align-items: center;
+          color: #B0B0B0;
+          span {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
