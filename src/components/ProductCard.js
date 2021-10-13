@@ -38,6 +38,7 @@ const ProductCard = ({product}) => {
                                     }
                                     if (!arr[product.id]) {
                                         arr[product.id] = product
+                                        arr[product.id].cartDate = Date.now()
                                         dispatch(setCartSize(Object.keys(arr).length))
                                         localStorage.setItem("cart", JSON.stringify(arr))
                                     }

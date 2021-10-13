@@ -15,7 +15,7 @@
     "babel-plugin-transform-export-extensions": "^6.22.0",
     "babel-plugin-transform-scss": "^1.1.0",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.6",
+    "@wojtekmaj/enzyme-adapter-react-17": "0.6.3",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

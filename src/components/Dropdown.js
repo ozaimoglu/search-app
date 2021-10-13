@@ -9,11 +9,21 @@ const Dropdown = ({title}) => {
     const {
         store,
     } = useSelector((state) => state)
-    const [cartList, setCartList] = useState(JSON.parse(localStorage.getItem("cart")) || [])
+    const [cartList, setCartList] = useState([])
+
+    const sort = (json) => {
+        var sortable = [];
+        for (var obj in json) {
+            sortable.push(json[obj]);
+        }
+
+        return sortable.sort((a, b) => (a.cartDate >= b.cartDate) ? -1 : 1)
+    }
 
 
     const showDropdown = () => {
-        setCartList(JSON.parse(localStorage.getItem("cart")))
+        setCartList(sort(JSON.parse(localStorage.getItem("cart"))))
+        debugger
         document.getElementById("myDropdown").classList.toggle("show");
         document.getElementById("myButton").classList.toggle("show");
     }
@@ -24,19 +34,19 @@ const Dropdown = ({title}) => {
                 <span className="count-tag">{store.cartSize}</span>
                 <button id="myButton" className="dropdown-button" onClick={() => showDropdown()}>{title}</button>
                 <div id="myDropdown" className="dropdown-content">
-                    {Object.keys(cartList).map((key, index) => {
+                    {cartList.map((item, index) => {
                         return (
                             <>
                                 <div className="dropdown-content-item-container">
-                                    <img className="dropdown-content-item-img" src={cartList[key].imgUrl}/>
+                                    <img className="dropdown-content-item-img" src={item.imgUrl}/>
                                     <div className="dropdown-content-detail-row">
-                                        <span className="dropdown-content-detail-name">{cartList[key].name}</span>
+                                        <span className="dropdown-content-detail-name">{item.name}</span>
                                         <button onClick={() => {
                                             let arr = JSON.parse(localStorage.getItem("cart"))
-                                            delete arr[key]
+                                            delete arr[item.id]
                                             localStorage.setItem("cart", JSON.stringify(arr))
                                             dispatch(setCartSize(Object.keys(arr).length))
-                                            setCartList(arr)
+                                            setCartList(sort(JSON.parse(localStorage.getItem("cart"))))
                                         }} className="dropdown-content-detail-button">Kaldır
                                         </button>
                                     </div>
