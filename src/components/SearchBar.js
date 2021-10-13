@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import PropTypes from "prop-types";
 import "./SearchBar.scss"
 
@@ -7,7 +7,7 @@ const SearchBar = ({placeholder, icon, value, onChange}) => {
         <>
             <div className="searchbar-container">
                 {icon}
-                <input placeholder={placeholder} className="searchbar-input" value={value} onChange={onChange} />
+                <input placeholder={placeholder} className="searchbar-input" value={value} onChange={onChange}/>
             </div>
         </>
     )
@@ -24,7 +24,8 @@ SearchBar.defaultTypes = {
     placeholder: "",
     icon: <></>,
     value: "",
-    onChange: () => {}
+    onChange: () => {
+    }
 }
 
 export default SearchBar

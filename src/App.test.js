@@ -1,0 +1,50 @@
+import React from 'react';
+import ProductCard from './components/ProductCard';
+import Adapter from 'enzyme-adapter-react-16';
+import * as redux from 'react-redux';
+import {shallow, configure} from "enzyme";
+import store from "./store/index"
+import {setCartSize} from "./store/storeSlice";
+
+
+configure({adapter: new Adapter()});
+describe("Card component content", () => {
+    let spyOnUseDispatch;
+    let mockDispatch;
+    beforeEach(() => {
+        spyOnUseDispatch = jest.spyOn(redux, 'useDispatch');
+        mockDispatch = jest.fn();
+        spyOnUseDispatch.mockReturnValue(mockDispatch);
+    });
+
+    const content = {
+        id: "4",
+        name: "iphone 12 pro max",
+        price: "11000",
+        imgUrl: "data:image/jpeg;base64,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",
+        brand: "apple",
+        color: "pembe",
+        oldPrice: "15000",
+        date: "2019-03-12",
+    };
+
+    it('render', () => {
+        const wrapper = shallow(<ProductCard product={content}/>);
+
+        expect(wrapper.exists()).toBe(true);
+        expect(wrapper.find("h1").text()).toEqual(content.name);
+    });
+
+    it('add product to cart', () => {
+        expect(store.getState().store.cartSize === 0).toBeTruthy()
+        const wrapper = shallow(<ProductCard product={content}/>);
+
+        expect(wrapper.exists()).toBe(true);
+
+        expect(wrapper.find("h1").text()).toEqual(content.name);
+        wrapper.find("div.card-container").simulate("click")
+        wrapper.find("button.add-button").simulate("click")
+        store.dispatch(setCartSize(1))
+        expect(store.getState().store.cartSize === 1).toBeTruthy()
+    });
+});

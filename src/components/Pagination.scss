@@ -1,0 +1,16 @@
+.pagination-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 10px;
+  .page-button{
+    cursor: pointer;
+    width: 33px;
+    height: 33px;
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    box-sizing: border-box;
+    border-radius: 9px;
+    color: #646464;
+  }
+}

@@ -1,22 +1,28 @@
 import React from "react"
 import PropTypes from "prop-types"
 import "./Header.scss"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import {useDispatch} from "react-redux";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faSearch} from '@fortawesome/free-solid-svg-icons'
 import SearchBar from "./SearchBar";
+import Dropdown from "./Dropdown";
+import {setSearchText} from "../store/storeSlice";
 
-const Header = ({logo, cartButtonOnClick, cartCount, searchPlaceholder}) => {
+const Header = ({id, logo, searchPlaceholder}) => {
+    const dispatch = useDispatch()
     return (
         <>
-            <div className="header-container">
+            <div id={id} className="header-container">
                 <div className="header-logo-container">
                     <img src={logo} alt=""/>
                 </div>
                 <div className="header-search-container">
-                    <SearchBar placeholder={searchPlaceholder} icon={<FontAwesomeIcon icon={faSearch}/>} />
+                    <SearchBar onChange={(e) => {
+                        dispatch(setSearchText(e.target.value))
+                    }} placeholder={searchPlaceholder} icon={<FontAwesomeIcon icon={faSearch}/>}/>
                 </div>
                 <div className="header-cart-container">
-                    <button onClick={cartButtonOnClick}>Sepet</button>
+                    <Dropdown title="Sepet"/>
                 </div>
             </div>
         </>

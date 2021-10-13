@@ -38,13 +38,17 @@
       .content-left {
         flex: 1;
       }
-      .content-items {
-        flex: 3;
-        display: grid;
-        grid-gap: 20px;
-        grid-template-columns: repeat(4, 1fr);
-        @media (max-width: 1400px) {
-          grid-template-columns: repeat(2, 1fr);
+      .content {
+        flex: 4;
+        display: flex;
+        flex-direction: column;
+        .content-items {
+          display: grid;
+          grid-gap: 20px;
+          grid-template-columns: repeat(4, 1fr);
+          @media (max-width: 1400px) {
+            grid-template-columns: repeat(2, 1fr);
+          }
         }
       }
     }

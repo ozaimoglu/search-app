@@ -1,0 +1,37 @@
+.order-container {
+  position: relative;
+  .order-button {
+    text-align: center;
+    cursor: pointer;
+    background: white;
+    border: 1px solid #B0B0B0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 120px;
+    height: 48px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 24px;
+    color: #B0B0B0;
+    z-index: 2;
+  }
+  .order-content {
+    background-color: gray;
+    position: absolute;
+    min-width: 120px;
+    left: 0;
+    overflow: auto;
+    z-index: 1;
+    border: 1px solid #B0B0B0;
+    box-sizing: border-box;
+    &.show {
+      display: block;
+    }
+    .order-item{
+      cursor: pointer;
+      margin-bottom: 5px;
+      color: white;
+    }
+  }
+}

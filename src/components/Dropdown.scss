@@ -1,0 +1,105 @@
+.dropdown-container {
+  position: relative;
+
+  .count-tag {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    z-index: 3;
+    border-radius: 100%;
+    background-color: #FF6000;
+    color: white;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+  }
+
+  .dropdown-button {
+    text-align: center;
+    cursor: pointer;
+    background: white;
+    border: 1px solid #B0B0B0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 120px;
+    height: 48px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 24px;
+    color: #B0B0B0;
+    z-index: 2;
+    position: relative;
+
+    &.show {
+      border-bottom: 1px solid white;
+      border-top: 1px solid #B0B0B0;
+      border-right: 1px solid #B0B0B0;
+      border-left: 1px solid #B0B0B0;
+
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  .dropdown-content {
+    min-height: 10px;
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 360px;
+    right: 0;
+    overflow: auto;
+    z-index: 1;
+    border: 1px solid #B0B0B0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    top: 47px;
+    border-top-right-radius: 0;
+
+    &.show {
+      display: block;
+    }
+
+    .dropdown-content-item-container {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      margin-bottom: 10px;
+      padding: 10px;
+
+      .dropdown-content-item-img {
+        height: 72px;
+        width: 54px;
+      }
+
+      .dropdown-content-detail-row {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+
+        .dropdown-content-detail-name {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 18px;
+          color: #484848;
+        }
+
+        .dropdown-content-detail-button {
+          background: #FFFFFF;
+          border: 1px solid #F90000;
+          border-radius: 4px;
+          color: #F90000;
+          width: 47px;
+          height: 16px;
+          font-size: 10px;
+          cursor: pointer;
+          align-content: space-between;
+        }
+      }
+    }
+
+  }
+}
